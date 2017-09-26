@@ -19,7 +19,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # 새로만든 static디렉토리를 가리키도록 os.path를 사용해 문자열 변수
-STATIC_DIR = os.path.join(BASE_DIR, 'stataic')
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
 # Django에서 정적파일을 가져올 폴더 목록
 STATICFILES_DIRS = [
     STATIC_DIR,
@@ -125,9 +125,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-kr'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
