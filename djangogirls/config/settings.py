@@ -18,6 +18,13 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+# 새로만든 static디렉토리를 가리키도록 os.path를 사용해 문자열 변수
+STATIC_DIR = os.path.join(BASE_DIR, 'stataic')
+# Django에서 정적파일을 가져올 폴더 목록
+STATICFILES_DIRS = [
+    STATIC_DIR,
+]
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
