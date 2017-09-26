@@ -7,7 +7,9 @@
 .blog-header .blog-title {
     margin: 0;
 }
-.blog-header .blog-title > a, a:hover, a:visited {
+.blog-header .blog-title > a,
+.blog-header .blog-title > a:hover,
+.blog-header .blog-title > a:visited {
     color: white;
     text-decoration: none;
 }
@@ -15,6 +17,10 @@
 .post-container {
 
 }
+.post-container > .btn-back-list {
+    margin-top: 10px;
+}
+
 .post-container > .post {
     padding-top: 10px;
     padding-bottom: 10px;

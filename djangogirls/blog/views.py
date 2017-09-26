@@ -21,9 +21,16 @@ def post_list(request):
 # 실제 템플릿파일 생성
 # 'post'라는 변수를 이용하 Post객체의 내용을 출력
 
-def post_detail(request):
-    post = Post.objects.first()
+def post_detail(request, pk):
+    try:
+        post = Post.objects.get(pk=pk)
+    except Post.DoesNotExist:
+        return HttpResponse('No Post', status=404)
+
     context = {
         'post': post,
     }
     return render(request, 'blog/post_detail.html', context)
+
+
+
