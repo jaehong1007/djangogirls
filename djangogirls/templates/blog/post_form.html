@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <h2>글 작성</h2>
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="input-title">제목</label>
+        <input name="title" type="input-title" class="form-control"  placeholder="제목을 입력하세요">
+    </div>
+    <div class="form-group">
+        <label for="input-content">내용</label>
+        <textarea name="content" class="form-control" cols="30" rows="10"></textarea>
+    </div>
+    <a class="btn btn-default btn-sm btn-back-list">작성하기</a>
+</form>
+</div>
+<div class="checkbox">
+  <label>
+    <input type="checkbox" name="publish_checkbox" value="1">
+    Save & Publish
+  </label>
+</div>
+{% endblock %}
