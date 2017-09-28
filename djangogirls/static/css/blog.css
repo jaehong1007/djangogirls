@@ -30,8 +30,14 @@
 
 }
 
-.post-container > .btn-write {
+.post-container > .btn-write-div{
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.post-container > .btn-write-div >.btn-write {
     float: right;
+    margin-right: 10px;
 
 }
 
@@ -39,6 +45,7 @@
 .post-container > .btn-delete-post  {
 
     margin-top: 10px;
+    margin-right: 5%;
     float: right;
 }
 

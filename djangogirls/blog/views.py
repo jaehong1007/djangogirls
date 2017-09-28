@@ -52,32 +52,40 @@ def post_add(request):
     #       (POST요청에서만 동작해야함)
     #       -> pk에 해당하는 Post를 삭제하고 post_list페이지로 이동
 
-    if request.method == 'POST' and request.POST.get('title') and request.POST.get('content'):
+    if request.method == 'POST':
         # request.POST(dict형 객체)에서 'title', 'content'키에 해당하는 value를 받아오기
         # 새 Post객체를 생성 (save() 호출없음 단순 인스턴스 생성
         # 생성한 후에는 해당 객체의 title, content를 HttpResponse로 전달
 
         # title이나 content 값이 오지 않았을 경우 객체를 생성하지 않고 다시 작성페이지로 이동
         #   extra) 작성페이지로 이동 시 '값을 입력해주세요'라는 텍스트를 어딘가에 표시 (render)
-        title = request.POST['title']
-        content = request.POST['content']
+        title = request.get['title']
+        content = request.get['content']
         author = User.objects.get(username='admin')
-        post = Post.objects.create(
-            author=author,
-            title=title,
-            content=content,
 
-        )
-        checkbox = request.POST.get('publish_checkbox')
-        if checkbox:
-            post.publish()
+        if title and content:
+            post = Post.objects.create(
+                author=author,
+                title=title,
+                content=content,
 
-        return redirect('post_detail', pk=post.pk)
+            )
 
-        # GET요청은 url에 접속했을때
-    else:
+            checkbox = request.POST.get('publish_checkbox')
+            if checkbox:
+                post.publish()
+            else:
+                post.save()
+
+            return redirect('post_detail', pk=post.pk)
+
         context = {
+            'title': title,
+            'content': content,
         }
+
+    else:
+        context = {}
         return render(request, 'blog/post_form.html', context)
 
 

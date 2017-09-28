@@ -4,7 +4,9 @@
 <!--'base.html'템플릿의 'content'블록을 채운다-->
 {% block content %}
 <div class="post-container">
+    <div class="btn-write-div">
     <a class="btn btn-default btn-sm btn-back-list btn-write " href="{% url 'post_add' %}">글 작성</a>
+    </div>
     {% for post in posts%}
     <div class="post">
 
