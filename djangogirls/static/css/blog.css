@@ -18,32 +18,39 @@
 }
 
 .post-container {
+    margin-top: 10px;
 
 }
-.post-container > .btn-write{
-    margin-top: 10px;
+
+
+
 .post-container > .btn-write > a{
     color: white;
 
-}
 
 }
-.post-container > .btn-back-list {
-    margin-top: 10px;
+
+.post-container > .btn-write {
+    float: right;
+
 }
+
 
 .post-container > .btn-delete-post  {
 
     margin-top: 10px;
+    float: right;
 }
 
 .post-container > .post {
+
     padding-top: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #999;
 }
 .post-container > .post > p {
     margin: 0;
+
 }
 .post-container > .post > p.right-text {
     text-align: right;

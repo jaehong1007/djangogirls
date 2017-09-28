@@ -20,7 +20,7 @@
     </div>
     <form action="{% url 'post_delete' pk=post.pk %}" class="btn-delete-post" method="post">
         {% csrf_token %}
-        <input type="submit" value="글 삭제"/>
+        <button class="btn btn-danger">글 삭제</button>
     </form>
 </div>
 

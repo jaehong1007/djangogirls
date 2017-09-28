@@ -66,10 +66,12 @@ def post_add(request):
             author=author,
             title=title,
             content=content,
+
         )
         checkbox = request.POST.get('publish_checkbox')
         if checkbox:
             post.publish()
+
         return redirect('post_detail', pk=post.pk)
 
         # GET요청은 url에 접속했을때
@@ -84,4 +86,4 @@ def post_delete(request, pk):
         post = Post.objects.get(pk=pk)
         post.delete()
         return redirect('post_list')
-    return redirect('post_detail', pk=pk)
+    return redirect('post_detail')

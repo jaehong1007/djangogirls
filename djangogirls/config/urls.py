@@ -24,8 +24,8 @@ urlpatterns = [
     # post/<숫자1개이상> 이 가능하도록 정규표현식 작성
     # 해당 숫자는 그룹으로 감싸고 'pk'라는 그룹명을 지정
     # post/3 -> post_detail(pk=3)
-    url(r'^post/(?P<pk>\d+)/', post_detail, name='post_detail'),
-    url(r'^post/add/', post_add, name='post_add'),
-    url(r'^post/delete/(?P<pk>\d+)/', post_delete, name='post_delete'),
+    url(r'^posts/(?P<pk>\d+)/$', post_detail, name='post_detail'),
+    url(r'^posts/(?P<pk>\d+)/delete/', post_delete, name='post_delete'),
+    url(r'^posts/add/', post_add, name='post_add'),
 ]
 
