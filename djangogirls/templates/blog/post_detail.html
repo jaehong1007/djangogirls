@@ -18,7 +18,10 @@
 
 
     </div>
-
+    <form action="{% url 'post_delete' pk=post.pk %}" class="btn-delete-post" method="post">
+        {% csrf_token %}
+        <input type="submit" value="글 삭제"/>
+    </form>
 </div>
 
 {% endblock %}

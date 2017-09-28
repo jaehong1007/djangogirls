@@ -12,12 +12,28 @@
 .blog-header .blog-title > a:visited {
     color: white;
     text-decoration: none;
+    font-size: 50px;
+    font-family: Cursive;
+    margin-left: 37%;
 }
 
 .post-container {
 
 }
+.post-container > .btn-write{
+    margin-top: 10px;
+.post-container > .btn-write > a{
+    color: white;
+
+}
+
+}
 .post-container > .btn-back-list {
+    margin-top: 10px;
+}
+
+.post-container > .btn-delete-post  {
+
     margin-top: 10px;
 }
 
